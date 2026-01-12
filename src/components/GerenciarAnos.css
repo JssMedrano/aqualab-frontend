@@ -1,0 +1,124 @@
+/* ============================================
+   ESTILOS ESPECÍFICOS PARA MANAGE YEARS
+   Usa CommonStyles.css para estilos compartidos
+   ============================================ */
+
+.manage-years-container {
+  min-height: 100vh;
+  background: var(--cor-fundo);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: var(--fonte-principal);
+}
+
+.manage-years-box {
+  background: var(--cor-fundo-secundario);
+  border-radius: var(--raio-borda-lg);
+  box-shadow: var(--sombra-lg);
+  max-width: 900px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--cor-borda);
+}
+
+.header h1 {
+  font-size: 40px;
+  margin: 0;
+  color: var(--cor-texto);
+}
+
+.error {
+  background: var(--cor-erro);
+  color: var(--cor-texto);
+  padding: 1rem;
+  border-radius: var(--raio-borda-md);
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--cor-borda);
+}
+
+.create-form {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.create-form input {
+  flex: 1;
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio-borda-md);
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+.btn-create {
+  padding: 0.8rem 1.2rem;
+  font-weight: 800;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.row {
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio-borda-lg);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.row-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-edit,
+.btn-delete {
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+}
+
+.empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--cor-texto-claro);
+}
+
+@media (max-width: 768px) {
+  .manage-years-container {
+    padding: 1rem;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .create-form {
+    flex-direction: column;
+  }
+  
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

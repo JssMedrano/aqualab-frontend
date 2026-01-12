@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-primaria: #1976d2;
+  --cor-secundaria: #1565c0;
+  --cor-destaque: #42a5f5;
+  --cor-texto: #1a1a1a;
+  --cor-texto-claro: #4f4f4f;
+  --cor-fundo: #cdced1;
+  --cor-fundo-secundario: #ffffff;
+  --cor-borda: #cbd5e1;
+  --cor-erro: #d32f2f;
+  --cor-sucesso: #2e7d32;
+  --fonte-principal: 'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', 'Comic Neue', cursive;
+  --tamanho-fonte-base: 16px;
+  --peso-fonte-normal: 400;
+  --peso-fonte-medio: 500;
+  --peso-fonte-negrito: 700;
+  --espacamento-xs: 0.5rem;
+  --espacamento-sm: 1rem;
+  --espacamento-md: 1.5rem;
+  --espacamento-lg: 2rem;
+  --espacamento-xl: 3rem;
+  --espacamento-xxl: 4rem;
+  --raio-borda-sm: 4px;
+  --raio-borda-md: 8px;
+  --raio-borda-lg: 12px;
+  --raio-borda-xl: 16px;
+  --sombra-sm: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0,0,0,0.05);
+  --sombra-md: 0 8px 16px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0,0,0,0.04);
+  --sombra-lg: 0 20px 40px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0,0,0,0.08);
+  --transicao-rapida: 0.15s ease;
+  --transicao-normal: 0.3s ease;
+  --transicao-lenta: 0.5s ease;
+  --tablet: 1024px;
+  --laptop: 1440px;
+  --desktop: 1680px;
+  --desktop-lg: 1920px;
+  --desktop-xl: 2560px;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  font-size: var(--tamanho-fonte-base);
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   TIPOGRAFIA
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--peso-fonte-negrito);
+  line-height: 1.2;
+  margin-bottom: var(--espacamento-sm);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+  margin-bottom: var(--espacamento-sm);
+}
+
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  transition: color var(--transicao-normal);
+}
+
+a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+
+button {
+  font-family: var(--fonte-principal);
+  font-size: 1rem;
+  font-weight: var(--peso-fonte-medio);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda-md);
+  padding: var(--espacamento-xs) var(--espacamento-md);
+  cursor: pointer;
+  transition: all var(--transicao-normal);
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-destaque) 100%);
+  color: #ffffff;
+  box-shadow: var(--sombra-sm);
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-md);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   FORMULÁRIOS
+   ============================================ */
+
+input,
+textarea,
+select {
+  font-family: var(--fonte-principal);
+  font-size: 1rem;
+  padding: var(--espacamento-xs) var(--espacamento-sm);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda-md);
+  transition: border-color var(--transicao-normal), box-shadow var(--transicao-normal), background-color var(--transicao-normal);
+  width: 100%;
+  background: #ffffff;
+  color: var(--cor-texto);
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(94, 242, 255, 0.15);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--espacamento-xs);
+  font-weight: var(--peso-fonte-medio);
+  color: var(--cor-texto);
+}
+
+/* ============================================
+   UTILITÁRIOS
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espacamento-md);
+}
+
+.texto-centro {
+  text-align: center;
+}
+
+.texto-esquerda {
+  text-align: left;
+}
+
+.texto-direita {
+  text-align: right;
+}
+
+.oculto {
+  display: none;
+}
+
+.visivel {
+  display: block;
+}
+
+/* ============================================
+   MEDIA QUERIES - TABLETS E DESKTOPS
+   ============================================ */
+
+/* iPad - 1024×768 */
+@media screen and (min-width: 1024px) {
+  :root {
+    --tamanho-fonte-base: 16px;
+  }
+  
+  h1 { font-size: 2.75rem; }
+  h2 { font-size: 2.25rem; }
+  h3 { font-size: 1.875rem; }
+}
+
+/* Laptop - 1440×900 */
+@media screen and (min-width: 1440px) {
+  :root {
+    --tamanho-fonte-base: 17px;
+  }
+  
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.5rem; }
+  h3 { font-size: 2rem; }
+}
+
+/* Desktop - 1680×1050 */
+@media screen and (min-width: 1680px) {
+  :root {
+    --tamanho-fonte-base: 18px;
+  }
+  
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* Desktop - 1920×1080 */
+@media screen and (min-width: 1920px) {
+  :root {
+    --tamanho-fonte-base: 18px;
+  }
+  
+  .container {
+    max-width: 1600px;
+  }
+  
+  h1 { font-size: 3.5rem; }
+  h2 { font-size: 2.75rem; }
+  h3 { font-size: 2.25rem; }
+}
+
+/* Desktop - 2560×1440 */
+@media screen and (min-width: 2560px) {
+  :root {
+    --tamanho-fonte-base: 20px;
+  }
+  
+  .container {
+    max-width: 2000px;
+  }
+  
+  h1 { font-size: 4rem; }
+  h2 { font-size: 3.25rem; }
+  h3 { font-size: 2.5rem; }
+}

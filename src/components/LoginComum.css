@@ -1,0 +1,244 @@
+/* ============================================
+   ESTILOS COMPARTIDOS PARA LOGIN
+   ============================================ */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  font-family: var(--fonte-principal);
+}
+
+.login-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Escurecido para melhor contraste */
+  backdrop-filter: blur(4px); /* Adiciona um leve desfoque moderno */
+  z-index: 1;
+}
+
+.login-modal {
+  background: #ffffff;
+  border-radius: var(--raio-borda-xl);
+  box-shadow: var(--sombra-lg);
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 32px;
+  position: relative;
+  z-index: 2;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.btn-back {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px 8px 0;
+  transition: color var(--transicao-normal);
+  margin-left: -30px; /* ~20px da borda (32px padding - 12px) */
+}
+
+.btn-back:hover {
+  color: var(--cor-primaria);
+}
+
+.btn-close {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #999;
+  cursor: pointer;
+  padding: 8px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all var(--transicao-normal);
+}
+
+.btn-close:hover {
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.alert {
+  padding: 12px 16px;
+  border-radius: var(--raio-borda-md);
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.alert-error {
+  background-color: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #c62828;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  padding: 12px 16px;
+  border: 2px solid var(--cor-borda); /* Slightly thicker and consistent color */
+  border-radius: var(--raio-borda-md);
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color var(--transicao-normal), box-shadow var(--transicao-normal);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--cor-destaque);
+  box-shadow: 0 0 0 3px rgba(107, 193, 255, 0.25);
+}
+
+.form-group input:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.btn-submit {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-destaque) 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--transicao-rapida), box-shadow var(--transicao-normal);
+  margin-top: 10px;
+}
+
+.btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(75, 144, 226, 0.28);
+}
+
+.btn-submit:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-submit:disabled {
+  background-color: #b0bec5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.login-footer {
+  margin-top: 24px;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.login-footer p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.register-link {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transicao-normal);
+}
+
+.register-link:hover {
+  color: var(--cor-secundaria);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-page {
+    padding: 20px;
+  }
+
+  .login-modal {
+    max-width: 100%;
+    padding: 30px 20px;
+  }
+
+  .modal-header {
+    margin-bottom: 25px;
+  }
+
+  .btn-back {
+    margin-left: 0; /* Em mobile o padding já é 20px, então zero margem = 20px borda */
+  }
+
+  .login-form {
+    gap: 16px;
+  }
+}
+
+/* ============================================
+   ESTILOS COMPARTIDOS ADICIONAIS (TITULOS)
+   ============================================ */
+.auth-title {
+  color: #2c3e50;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: #7f8c8d;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.5;
+}

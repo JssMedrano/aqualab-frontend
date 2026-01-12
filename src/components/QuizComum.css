@@ -1,0 +1,243 @@
+/* ============================================
+   ESTILOS COMPARTILHADOS PARA QUIZZES (CreateQuiz e EditQuiz)
+   ============================================ */
+
+/* Estilos de formulários para quizzes */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  color: var(--cor-texto);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio-borda-md);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--transicao-normal);
+  background: var(--cor-fundo-secundario);
+  color: var(--cor-texto);
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+}
+
+.form-group small {
+  color: var(--cor-texto-claro);
+}
+
+/* Cartões de perguntas */
+.question-card {
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio-borda-lg);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: var(--cor-fundo);
+}
+
+.question-card-header,
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.question-card-header h3,
+.question-header h3 {
+  margin: 0;
+  color: var(--cor-texto);
+  font-size: 1.2rem;
+}
+
+/* Botones para agregar preguntas */
+.btn-add,
+.add-question-btn {
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-destaque) 100%);
+  color: var(--cor-texto);
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: var(--raio-borda-md);
+  cursor: pointer;
+  font-weight: 800;
+  transition: transform var(--transicao-rapida), box-shadow var(--transicao-normal);
+}
+
+.add-question-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.btn-add:hover,
+.add-question-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-md);
+}
+
+.add-question-btn:hover {
+  background: var(--cor-destaque);
+}
+
+/* Botões para remover perguntas */
+.btn-delete,
+.remove-question-btn {
+  background: var(--cor-erro);
+  color: var(--cor-texto);
+  border: none;
+  border-radius: var(--raio-borda-md);
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  font-weight: 900;
+  transition: background var(--transicao-normal);
+}
+
+.remove-question-btn {
+  padding: 0.5rem 1rem;
+  border-radius: var(--raio-borda-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.btn-delete:hover,
+.remove-question-btn:hover {
+  background: #c82333;
+}
+
+/* Mensagens de erro e sucesso */
+.error-message {
+  background: var(--cor-erro);
+  color: var(--cor-texto);
+  padding: 1rem;
+  border-radius: var(--raio-borda-md);
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--cor-borda);
+  text-align: center;
+}
+
+.success-message {
+  background: var(--cor-sucesso);
+  color: var(--cor-texto);
+  padding: 1rem;
+  border-radius: var(--raio-borda-md);
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--cor-borda);
+  text-align: center;
+}
+
+/* Cabeçalhos de seção */
+.questions-header,
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.25rem 0 0.75rem;
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.questions-header h2,
+.section-header h2 {
+  margin: 0;
+  color: var(--cor-texto);
+  font-size: 1.5rem;
+}
+
+/* Estilos de opções */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.option-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--cor-texto-claro);
+}
+
+.option-group input[type="radio"] {
+  cursor: pointer;
+  min-width: 20px;
+}
+
+.option-group input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda-sm);
+  font-size: 0.9rem;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.option-row input[type="radio"] {
+  min-width: 20px;
+  cursor: pointer;
+}
+
+.option-row input[type="text"] {
+  flex: 1;
+  min-width: 150px;
+  border: 2px solid #444;
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  background-color: #2d2d3d;
+  color: #fff;
+  box-sizing: border-box;
+  font-family: inherit;
+  display: block;
+}
+
+.option-row input[type="text"]:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: #3a3a4a;
+}
+
+.option-row input[type="text"]::placeholder {
+  color: #888;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.points-group {
+  max-width: 150px;
+}
+
+.points-group input {
+  padding: 0.5rem;
+}

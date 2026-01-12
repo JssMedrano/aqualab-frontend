@@ -1,0 +1,203 @@
+/* ===== MODAL OVERLAY ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85); /* Darkened for better focus */
+  backdrop-filter: blur(8px);
+  z-index: 9998;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ===== ROLE MODAL ===== */
+.role-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 20px;
+  padding: 50px 40px;
+  z-index: 9999;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  animation: slideDown 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-size: 24px;
+  color: #666;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: #f5f5f5;
+  border-color: #999;
+  transform: rotate(90deg);
+}
+
+.modal-title {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  color: #333;
+  margin: 0 0 40px 0;
+  font-family: var(--fonte-principal);
+}
+
+/* ===== ROLE OPTIONS ===== */
+.role-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.role-option {
+  padding: 30px 20px;
+  border: 3px solid #e0e0e0;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-family: var(--fonte-principal);
+}
+
+.role-option:hover {
+  border-color: #1e88e5;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(30, 136, 229, 0.2);
+}
+
+.role-option.selected {
+  border-color: #1e88e5;
+  background: #e3f2fd;
+  box-shadow: 0 10px 25px rgba(30, 136, 229, 0.3);
+}
+
+.role-option.professor:hover,
+.role-option.professor.selected {
+  border-color: #1e88e5;
+}
+
+.role-option.aluno:hover,
+.role-option.aluno.selected {
+  border-color: #f9a825;
+}
+
+.role-option.aluno.selected {
+  background: #fff8e1;
+}
+
+.role-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.role-option.aluno .role-avatar {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+}
+
+.role-option:hover .role-avatar {
+  transform: scale(1.1);
+}
+
+.avatar-icon {
+  font-size: 50px;
+}
+
+.role-option h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.role-option.professor h3 {
+  color: #1e88e5;
+}
+
+.role-option.aluno h3 {
+  color: #f9a825;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .role-modal {
+    padding: 40px 25px;
+    width: 95%;
+  }
+
+  .modal-title {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .role-options {
+    gap: 20px;
+  }
+
+  .role-option {
+    padding: 25px 15px;
+  }
+
+  .role-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatar-icon {
+    font-size: 40px;
+  }
+
+  .role-option h3 {
+    font-size: 18px;
+  }
+}

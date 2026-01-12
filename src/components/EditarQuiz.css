@@ -1,0 +1,285 @@
+/* ============================================
+   ESTILOS ESPECÍFICOS PARA EDITAR QUIZ
+   Usa QuizCommon.css para estilos compartidos
+   ============================================ */
+
+.edit-quiz-container {
+  min-height: 100vh;
+  background: var(--cor-fundo);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: var(--fonte-principal);
+}
+
+.edit-quiz-box {
+  background: var(--cor-fundo-secundario);
+  border-radius: var(--raio-borda-lg);
+  box-shadow: var(--sombra-lg);
+  max-width: 1000px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--cor-borda);
+}
+
+.header h1 {
+  margin: 0;
+  color: var(--cor-texto);
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--cor-texto-claro);
+}
+
+.btn-back {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--raio-borda-md);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.btn-back:hover {
+  background: var(--cor-fundo-secundario);
+}
+
+.loading {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--cor-destaque);
+  font-weight: 800;
+}
+
+/* Sobrescribe estilos específicos del QuizCommon */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.btn-save {
+  background: var(--cor-primaria);
+  color: var(--cor-texto);
+  border: none;
+  padding: 0.9rem 1.4rem;
+  border-radius: var(--raio-borda-md);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.btn-delete-quiz {
+  background: var(--cor-erro);
+  color: var(--cor-texto);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background var(--transicao-normal);
+}
+
+.btn-delete-quiz:hover {
+  background: #ee5a52;
+}
+
+.btn-delete-quiz:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .edit-quiz-container {
+    padding: 1rem;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .option-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .footer {
+    justify-content: stretch;
+  }
+  
+  .btn-save {
+    width: 100%;
+  }
+}
+
+/* --- ESTILOS DE CARD DE PERGUNTA (Portado de CriarQuiz) --- */
+.question-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.question-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: #d0d0d0;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.question-header h3 {
+  font-size: 1.2rem;
+  color: var(--cor-primaria);
+  font-weight: 700;
+  margin: 0;
+}
+
+.remove-question-btn {
+  background: transparent;
+  color: #ef5350;
+  border: 1px solid #ffebee;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.remove-question-btn:hover {
+  background: #ffebee;
+  border-color: #ef5350;
+}
+
+.question-card textarea {
+  width: 100%;
+  border: 2px solid #eef2f6;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1rem;
+  background: #fcfcfc;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.3s;
+}
+
+.question-card textarea:focus {
+  background: #fff;
+  border-color: var(--cor-primaria);
+  outline: none;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.option-group {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.option-group:focus-within {
+  background: #fff;
+  border-color: var(--cor-destaque);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.option-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+}
+
+.option-group input[type="radio"] {
+  accent-color: var(--cor-primaria);
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.option-group input[type="text"] {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.option-group input[type="text"]:focus {
+  border-color: var(--cor-primaria);
+  outline: none;
+}
+
+.points-group {
+  margin-top: 1.5rem;
+}
+
+.points-group input {
+  max-width: 150px;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
