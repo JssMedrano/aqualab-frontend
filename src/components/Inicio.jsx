@@ -8,7 +8,7 @@ import videoImportancia from "../assets/Importancia.mp4";
 import videoCiclo from "../assets/Ciclo.mp4";
 import videoEconomizar from "../assets/Economizar.mp4";
 import bookmarkIcon from "../assets/bookmark-icon.png";
-import LogoSinFondo from "../assets/LogoSinFondo.png";
+import LogoSinFondo from "../assets/LogoSinFondo.svg";
 
 export default function Inicio() {
   const navigate = useNavigate();

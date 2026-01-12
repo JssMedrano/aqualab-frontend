@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import './LayoutAluno.css';
-import LogoSinFondo from '../assets/LogoSinFondo.png';
+import LogoSinFondo from '../assets/LogoSinFondo.svg';
 
 export default function LayoutAluno({ children, exibirMenu = true }) {
   const { logout } = useAuth();
