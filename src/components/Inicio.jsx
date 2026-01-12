@@ -59,7 +59,7 @@ export default function Inicio() {
       <nav className="home-nav">
         <div className="nav-brand">
           <div className="logo"><img src={LogoSinFondo} alt="Aqualab Logo" /></div>
-          <h1 className="logo-text">Aqualab  v1</h1>
+          <h1 className="logo-text">Aqualab  v2</h1>
         </div>
 
         <div className="nav-links">
