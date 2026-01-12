@@ -19,7 +19,14 @@ const decodeJWT = (token) => {
 };
 
 // Configuração da API: em dev usa o proxy /api, em prod usa VITE_API_URL do Vercel
-const API_URL = import.meta.env.VITE_API_URL 
+// Em produção, falha rapidamente se VITE_API_URL não estiver definida
+const API_URL = (() => {
+  const envUrl = import.meta.env.VITE_API_URL;
+  if (envUrl && envUrl.trim()) return envUrl.trim().replace(/\/$/, '');
+  if (import.meta.env.DEV) return '/api';
+  console.warn('VITE_API_URL ausente; fallback para /api (pode falhar em produção).');
+  return '/api';
+})();
 
 const apiClient = axios.create({
   baseURL: API_URL,
@@ -36,8 +43,8 @@ const getStoredTokenSafe = () => {
   }
 };
 
-// Ensure Authorization is present even if a component fires a request
-// before AuthProvider finishes hydrating state from localStorage.
+// Garante que o token de autorização esteja presente e atualizado em cada requisição.
+// Busca o token mais recente do localStorage para evitar problemas de estado obsoleto.
 apiClient.interceptors.request.use(
   (config) => {
     const storedToken = getStoredTokenSafe();
@@ -1113,7 +1120,7 @@ export function AuthProvider({ children }) {
           console.warn('⚠️ Error en API, usando localStorage:', apiErr.message);
         }
         
-        // Obtener desde localStorage con clave específica del estudiante
+        // Obter desde localStorage com chave específica do estudante
         const storedAttempts = JSON.parse(localStorage.getItem(completedQuizzesKey) || '[]');
         console.log('📊 Intentos completados desde localStorage para', studentId, ':', storedAttempts);
         

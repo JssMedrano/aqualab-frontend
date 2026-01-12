@@ -69,32 +69,27 @@ export default function CriarQuiz() {
         const all = result.data || [];
         const teacherId = getTeacherId();
 
-        // If the backend includes ownership info, filter to years created by this teacher.
-        // If not, assume the backend already returns only the teacher years.
-        let filtered = all;
-        const someHaveOwner = all.some((y) => getYearOwnerId(y) != null);
-        if (teacherId && someHaveOwner) {
-          filtered = all.filter((y) => String(getYearOwnerId(y)) === String(teacherId));
-        }
-
-        // Sort by numeric year (best effort)
-        filtered = [...filtered].sort((a, b) => {
+        // Confia que o backend já retorna os anos corretos para o professor.
+        // Apenas ordena os resultados.
+        const sortedYears = [...all].sort((a, b) => {
           const av = normalizeYearValue(a) ?? 0;
           const bv = normalizeYearValue(b) ?? 0;
           return av - bv;
         });
 
-        console.log('📅 Anos disponíveis carregados:', filtered);
-        filtered.forEach((y) => {
+        console.log('📅 Anos disponíveis carregados:', sortedYears);
+        sortedYears.forEach((y) => {
           console.log(`  - Ano ${y.year ?? y.value} (id: ${y.id}):`, y);
         });
 
-        setAvailableYears(filtered);
+        setAvailableYears(sortedYears);
 
         // Preselect first year if none selected yet
-        if (!quizData.yearId && filtered.length > 0) {
-          const firstVal = normalizeYearValue(filtered[0]);
-          const firstId = filtered[0]?.id;
+        if (!quizData.yearId && sortedYears.length > 0) {
+          const firstYear = sortedYears[0];
+          const firstVal = normalizeYearValue(firstYear);
+          const firstId = firstYear?.id;
+
           if (firstVal && firstId) {
             setQuizData((prev) => ({ ...prev, year: firstVal, yearId: firstId }));
             console.log(`✅ Ano pré-selecionado: ${firstVal} (id: ${firstId})`);
