@@ -312,8 +312,8 @@ export default function Inicio() {
                 </svg>
               </div>
               <div className="feature-item-content">
-                <h4>Slides de Conteúdo</h4>
-                <p>Biblioteca de apresentações prontas.</p>
+                <h4>Criação de Turmas</h4>
+                <p>Gerencie suas turmas de forma eficiente.</p>
               </div>
             </div>
 
