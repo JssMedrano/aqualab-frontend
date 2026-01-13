@@ -7,7 +7,7 @@ Plataforma educativa para gestão de aulas, quizzes, vídeos e artigos. Interfac
 ## 📋 Descrição do Projeto
 
 AquaLab é uma aplicação web educativa que permite:
-- **Professores**: Criar e gerenciar quizzes, visualizar desempenho dos alunos, organizar conteúdo por anos escolares
+- **Professores**: Criar e gerenciar quizzes, visualizar desempenho dos alunos, organizar conteúdo por anos escolares da E.E. Barão de Ramalho
 - **Estudantes**: Responder quizzes, assistir vídeos educativos, ler artigos, revisar histórico de resultados
 - **Autenticação**: Sistema JWT para segurança de acesso
 

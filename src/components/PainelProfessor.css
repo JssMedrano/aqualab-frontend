@@ -213,8 +213,10 @@
   background: #fff;
   border-radius: 16px;
   padding: 30px;
+  max-height: 600px;
   box-shadow: var(--sombra-md);
   backdrop-filter: blur(10px);
+  overflow-y: auto;
 }
 
 .section-header {

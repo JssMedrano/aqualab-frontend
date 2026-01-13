@@ -27,17 +27,8 @@ import vid15 from '../assets/video_2026-01-11_15-55-38.mp4'
 import vid16 from '../assets/video_2026-01-11_15-55-42.mp4'
 
 const listaVideos = [
-  {
-    id: 1,
-    titulo: 'O ciclo da água',
-    topico: 'Ciências',
-    duracao: '08:12',
-    nivel: 'Básico',
-    humor: '🌊',
-    descricao: 'Explore a fascinante jornada da água na Terra. Entenda detalhadamente como a evaporação dos oceanos, a condensação nas nuvens e a precipitação trabalham juntas para manter a vida no nosso planeta através de um ciclo contínuo.',
-    source: vidCiclo,
-    materiais: []
-  },
+  { id: 1, titulo: 'Análise de pH da Água', topico: 'Química', duracao: '03:50', nivel: 'Intermediário', humor: '⚗️', descricao: 'Experimento químico fundamental para determinar a acidez da água. Aprenda a usar indicadores de pH e entenda o que os resultados revelam sobre a qualidade da água e sua adequação para a vida aquática.', source: vid06, materiais: [] },
+  ,
   {
     id: 2,
     titulo: 'A Importância da Água',
@@ -95,7 +86,17 @@ const listaVideos = [
   },
   { id: 7, titulo: 'Coleta de Amostras - Parte 1', topico: 'Campo', duracao: '02:10', nivel: 'Básico', humor: '📋', descricao: 'Acompanhe a primeira etapa da nossa expedição de campo. Veja os alunos aplicando técnicas corretas para coletar água do rio, garantindo que as amostras sejam representativas para análise laboratorial.', source: vid04, materiais: [] },
   { id: 8, titulo: 'Coleta de Amostras - Parte 2', topico: 'Campo', duracao: '02:45', nivel: 'Básico', humor: '📋', descricao: 'Continuação do trabalho de campo em diferentes pontos de coleta. Entenda a importância de variar os locais de amostragem para obter um panorama completo da saúde do ecossistema aquático local.', source: vid05, materiais: [] },
-  { id: 9, titulo: 'Análise de pH da Água', topico: 'Química', duracao: '03:50', nivel: 'Intermediário', humor: '⚗️', descricao: 'Experimento químico fundamental para determinar a acidez da água. Aprenda a usar indicadores de pH e entenda o que os resultados revelam sobre a qualidade da água e sua adequação para a vida aquática.', source: vid06, materiais: [] },
+  {
+    id: 9,
+    titulo: 'O ciclo da água',
+    topico: 'Ciências',
+    duracao: '08:12',
+    nivel: 'Básico',
+    humor: '🌊',
+    descricao: 'Explore a fascinante jornada da água na Terra. Entenda detalhadamente como a evaporação dos oceanos, a condensação nas nuvens e a precipitação trabalham juntas para manter a vida no nosso planeta através de um ciclo contínuo.',
+    source: vidCiclo,
+    materiais: []
+  },
   { id: 10, titulo: 'Turbidez e Clareza', topico: 'Química', duracao: '04:00', nivel: 'Intermediário', humor: '👁️', descricao: 'Avaliação visual e técnica da transparência da água. Descubra como partículas em suspensão afetam a qualidade da água e o que a turbidez pode indicar sobre erosão ou poluição nas proximidades.', source: vid07, materiais: [] },
   { id: 11, titulo: 'Vida Aquática: Peixes', topico: 'Biologia', duracao: '06:12', nivel: 'Básico', humor: '🐟', descricao: 'Um olhar atento sobre a fauna local. Observe o comportamento das espécies de peixes nativos e entenda como a presença (ou ausência) de certas espécies serve como um bioindicador da saúde do rio.', source: vid08, materiais: [] },
   { id: 12, titulo: 'Vida Aquática: Plantas', topico: 'Biologia', duracao: '05:45', nivel: 'Básico', humor: '🌿', descricao: 'Explore a importância crítica da mata ciliar. Veja como a vegetação nas margens protege o rio contra o assoreamento, filtra poluentes e fornece abrigo essencial para a fauna aquática.', source: vid09, materiais: [] },
