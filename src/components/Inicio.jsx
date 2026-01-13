@@ -8,7 +8,7 @@ import videoImportancia from "../assets/Importancia.mp4";
 import videoCiclo from "../assets/Ciclo.mp4";
 import videoEconomizar from "../assets/Economizar.mp4";
 import bookmarkIcon from "../assets/bookmark-icon.png";
-import LogoSinFondo from "../assets/LogoSinFondo.svg";
+import LogoSinFondo from "../assets/LogoSinFondo1.png";
 
 export default function Inicio() {
   const navigate = useNavigate();
@@ -114,8 +114,7 @@ export default function Inicio() {
             Bem-vindo ao <span className="highlight-aqualab">Aqualab</span>
           </h1>
           <p className="hero-subtitle">
-            Explore o mundo com nossos conteúdos interativos, vídeos educativos
-            e jogos divertidos.
+            Aprendizado nunca foi tão divertido! Conheça nossa plataforma digital com vídeos educativos, jogos interativos e conteúdos envolventes da E.E. Barão de Ramalho.
           </p>
         </div>
       </section>

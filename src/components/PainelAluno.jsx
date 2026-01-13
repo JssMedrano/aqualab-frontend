@@ -44,7 +44,8 @@ export default function PainelAluno() {
         <div className="dashboard-main" style={estiloFundo}>
           <div className="dashboard-greeting">
             <h1>Bem-vindo, {user?.name}!</h1>
-            <p>Escolha uma área de conteúdo para começar seu aprendizado.</p>
+            <p>Mergulhe com a Barão de Ramalho no AquaLab! Conteúdos preparados 
+             <br></br> especialmente para transformar água em sabedoria e alegria!</p>
           </div>
 
           {!mostrarQuebraCabeca && (

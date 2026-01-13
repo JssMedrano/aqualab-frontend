@@ -160,8 +160,8 @@ export default function PainelProfessor() {
         {/* Header */}
         <header className="teacher-header">
           <div className="header-left">
-            <h1>📊 AquaLab Classroom</h1>
-            <p className="subtitle">Acompanhamento e gestão das suas turmas</p>
+            <h1>Dashboard do Professor</h1>
+            <p className="subtitle">Acompanhamento e gestão das suas turmas da escola E.E. Barão de Ramalho</p>
           </div>
           <div className="header-right">
             <div className="user-info">
